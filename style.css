@@ -15,11 +15,23 @@ body {
 }
 
 .container {
-    width: 500px;
+    width: 900px;
     background: #fff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+    gap: 30px;
+}
+
+.form-left {
+    flex: 1;
+}
+
+.form-right {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
@@ -27,6 +39,7 @@ h2 {
     margin-bottom: 25px;
     color: #333;
     font-size: 24px;
+    grid-column: 1 / -1;
 }
 
 .form-group {
@@ -59,7 +72,8 @@ input:focus, select:focus, textarea:focus {
 
 textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 250px;
+    flex-grow: 1;
 }
 
 .radio-group {
@@ -86,6 +100,7 @@ textarea {
     display: flex;
     gap: 12px;
     margin-top: 25px;
+    grid-column: 1 / -1;
 }
 
 button {
@@ -120,10 +135,15 @@ button[type="reset"]:hover {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .container {
         width: 95%;
         padding: 20px;
+        flex-direction: column;
+    }
+
+    .form-left, .form-right {
+        flex: 1;
     }
 
     h2 {
@@ -139,5 +159,9 @@ button[type="reset"]:hover {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+
+    textarea {
+        min-height: 120px;
     }
 }
