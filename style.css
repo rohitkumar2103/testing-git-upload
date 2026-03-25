@@ -7,35 +7,38 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .container {
-    width: 400px;
+    width: 500px;
     background: #fff;
-    padding: 25px;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #333;
+    font-size: 24px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-weight: bold;
     color: #444;
+    font-size: 14px;
 }
 
 input, select, textarea {
@@ -45,6 +48,7 @@ input, select, textarea {
     border-radius: 6px;
     font-size: 14px;
     transition: 0.3s;
+    font-family: Arial, sans-serif;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -54,26 +58,44 @@ input:focus, select:focus, textarea:focus {
 }
 
 textarea {
-    resize: none;
-    height: 80px;
+    resize: vertical;
+    min-height: 80px;
 }
 
 .radio-group {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
 .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-weight: normal;
+    margin-bottom: 0;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
 }
 
 button {
-    width: 100%;
+    flex: 1;
     padding: 12px;
     border: none;
     background: #28a745;
     color: white;
     font-size: 16px;
+    font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
@@ -81,11 +103,41 @@ button {
 
 button:hover {
     background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button[type="reset"] {
+    background: #6c757d;
+}
+
+button[type="reset"]:hover {
+    background: #5a6268;
 }
 
 /* Responsive */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .container {
-        width: 90%;
+        width: 95%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }
